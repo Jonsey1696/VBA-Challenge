@@ -1,0 +1,26 @@
+Attribute VB_Name = "Module1"
+
+
+
+Sub color_format()
+
+For Each ws In Worksheets
+
+    Dim i As Integer
+    Dim r1 As Range
+
+        For i = 2 To ws.Range("J2").End(xlDown).Row
+   
+            Set r1 = ws.Range("J" & i)
+        
+            If r1.Value < 0 Then r1.Interior.Color = vbRed
+            If r1.Value >= 0 Then r1.Interior.Color = vbGreen
+
+        Next i
+        
+Next ws
+   
+End Sub
+
+
+
